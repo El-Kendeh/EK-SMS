@@ -29,6 +29,12 @@ importers:
         specifier: 19.2.3
         version: 19.2.3(react@19.2.3)
     devDependencies:
+      '@ek-sms/config':
+        specifier: workspace:*
+        version: link:../../packages/config
+      '@ek-sms/shared-types':
+        specifier: workspace:*
+        version: link:../../packages/shared-types
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.1.18

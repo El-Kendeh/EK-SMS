@@ -14,6 +14,8 @@
     "react-dom": "19.2.3"
   },
   "devDependencies": {
+    "@ek-sms/config": "workspace:*",
+    "@ek-sms/shared-types": "workspace:*",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
