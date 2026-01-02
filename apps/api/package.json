@@ -14,7 +14,9 @@
     "type-check": "mypy src",
     "test": "pytest",
     "test:coverage": "pytest --cov=src --cov-report=html",
-    "db:migrate": "alembic upgrade head",
+    "db:migrate": "cd src && alembic -c ../alembic.ini upgrade head",
+    "db:rollback": "cd src && alembic -c ../alembic.ini downgrade -1",
+    "db:migration": "cd src && alembic -c ../alembic.ini revision --autogenerate -m",
     "db:seed": "python -m scripts.seed"
   }
 }

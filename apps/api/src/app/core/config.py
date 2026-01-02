@@ -44,7 +44,7 @@ class Settings(BaseSettings):
     # Database
     # ==========================================
     postgres_host: str = "localhost"
-    postgres_port: int = 5432
+    postgres_port: int = 5440
     postgres_user: str = "eksms"
     postgres_password: str = "eksms_dev_password"
     postgres_db: str = "eksms_dev"
@@ -71,7 +71,7 @@ class Settings(BaseSettings):
     # Redis
     # ==========================================
     redis_host: str = "localhost"
-    redis_port: int = 6379
+    redis_port: int = 6380
     redis_password: str = ""
 
     @computed_field
