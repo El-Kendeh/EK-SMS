@@ -1,0 +1,39 @@
+name: Deploy to Staging
+
+on:
+  push:
+    branches: [develop]
+
+concurrency:
+  group: staging-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy-api:
+    name: Deploy API to Staging
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Railway
+        run: echo "Railway deployment will be configured in Phase 6"
+        # TODO: Add Railway deployment action
+        # uses: railwayapp/railway-action@v1
+        # with:
+        #   service: api
+        #   environment: staging
+
+  deploy-web:
+    name: Deploy Web to Staging
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Vercel
+        run: echo "Vercel deployment will be configured in Phase 6"
+        # TODO: Add Vercel deployment
+        # Vercel auto-deploys from GitHub, so this may not be needed

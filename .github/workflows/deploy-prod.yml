@@ -1,0 +1,34 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy-api:
+    name: Deploy API to Production
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Railway
+        run: echo "Railway deployment will be configured in Phase 6"
+        # TODO: Add Railway deployment action
+
+  deploy-web:
+    name: Deploy Web to Production
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Vercel
+        run: echo "Vercel deployment will be configured in Phase 6"
+        # TODO: Add Vercel deployment
